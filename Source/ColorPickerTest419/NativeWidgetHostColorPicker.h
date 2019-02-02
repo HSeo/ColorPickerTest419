@@ -13,11 +13,7 @@ class COLORPICKERTEST419_API UNativeWidgetHostColorPicker : public UNativeWidget
 
 public:
   UNativeWidgetHostColorPicker(const FObjectInitializer& ObjectInitializer);
-  virtual void ReleaseSlateResources(bool bReleaseChildren) override;
 
 protected:
   virtual TSharedRef<SWidget> RebuildWidget() override;
-
-protected:
-  TSharedPtr<SColorPicker> color_picker_;
 };
