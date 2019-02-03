@@ -7,7 +7,7 @@ TSharedRef<SWidget> UNativeWidgetHostColorPicker::RebuildWidget() {
   TSharedRef<SColorPicker> color_picker = SNew(SColorPicker);
   SetContent(color_picker);
 
-  Super::RebuildWidget(); // Unnecessary?
+  UNativeWidgetHost::RebuildWidget(); // Unnecessary?
 
   return GetContent().ToSharedRef();
 }
