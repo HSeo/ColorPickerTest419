@@ -3,11 +3,16 @@
 
 UNativeWidgetHostColorPicker::UNativeWidgetHostColorPicker(const FObjectInitializer& ObjectInitializer) : UNativeWidgetHost(ObjectInitializer) {}
 
-TSharedRef<SWidget> UNativeWidgetHostColorPicker::RebuildWidget() {
-  TSharedRef<SColorPicker> color_picker = SNew(SColorPicker);
-  SetContent(color_picker);
+void UNativeWidgetHostColorPicker::ReleaseSlateResources(bool bReleaseChildren) {
+  Super::ReleaseSlateResources(bReleaseChildren);
+  color_picker_.Reset();
+}
 
-  UNativeWidgetHost::RebuildWidget(); // Unnecessary?
+TSharedRef<SWidget> UNativeWidgetHostColorPicker::RebuildWidget() {
+  SAssignNew(color_picker_, SColorPicker);
+  SetContent(color_picker_.ToSharedRef());
+
+  //UNativeWidgetHost::RebuildWidget(); // Unnecessary?
 
   return GetContent().ToSharedRef();
 }

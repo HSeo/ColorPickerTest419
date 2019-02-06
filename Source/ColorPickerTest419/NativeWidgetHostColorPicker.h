@@ -7,13 +7,16 @@
 class SColorPicker;
 
 UCLASS()
-class COLORPICKERTEST419_API UNativeWidgetHostColorPicker : public UNativeWidgetHost
-{
+class COLORPICKERTEST419_API UNativeWidgetHostColorPicker : public UNativeWidgetHost {
   GENERATED_BODY()
 
 public:
   UNativeWidgetHostColorPicker(const FObjectInitializer& ObjectInitializer);
+  virtual void ReleaseSlateResources(bool bReleaseChildren) override;
 
 protected:
   virtual TSharedRef<SWidget> RebuildWidget() override;
+
+private:
+  TSharedPtr<SColorPicker> color_picker_;
 };
