@@ -61,3 +61,8 @@ I have no idea if Rebuildwidget function of the partent class (UNativeWidgetHost
 **ReleaseSlateResources is also inevitable to avoid memory leaks.**
 
 ![SColorPicker_PIE](https://user-images.githubusercontent.com/8625552/52100760-226cb480-261c-11e9-8d37-5f29b84e6886.jpg)
+
+---
+* Reference
+
+[SColorPicker with NativeWidgetHost cannot be packaged with an error related to TSharedPtr. - UE4 AnswerHub](https://answers.unrealengine.com/questions/870672/scolorpicker-with-nativewidgethost-cannot-be-packa.html "SColorPicker with NativeWidgetHost cannot be packaged with an error related to TSharedPtr.")
